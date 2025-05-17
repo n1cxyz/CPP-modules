@@ -1,13 +1,5 @@
 #include "cat.hpp"
 
-/*class Cat : public Cat {
-	public:
-		Cat();
-		Cat(const Cat &cat);
-		~Cat();
-		Cat& operator = (const Cat &cat);
-}; */
-
 Cat::Cat() {
 	std::cout << "constructor called from Cat" << std::endl;
 	this->type = "Cat";

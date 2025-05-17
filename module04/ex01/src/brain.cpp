@@ -1,17 +1,5 @@
 #include "brain.hpp"
 
-/* class Brain {
-	public:
-		Brain();
-		Brain(const Brain& brain);
-		~Brain();
-		Brain& operator = (const Brain& brain);
-
-	protected:
-		std::string* ideas;
-
-}; */
-
 Brain::Brain() {
 	std::cout << "Brain constructed" << std::endl;
 }
