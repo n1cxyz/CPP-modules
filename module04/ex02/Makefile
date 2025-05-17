@@ -3,8 +3,7 @@ CXX			= c++
 BIN			= bin
 INCLUDES	= -I./include
 CXXFLAGS	= -Wall -Werror -Wextra -std=c++98
-SRC			= src/main.cpp src/AMateria.cpp src/Character.cpp src/Cure.cpp \
-src/Ice.cpp src/ICharacter.cpp src/IMateriaSource.cpp src/MateriaSource.cpp
+SRC			= src/main.cpp src/animal.cpp src/brain.cpp src/cat.cpp src/dog.cpp
 OBJS		= $(SRC:src/%c=$(BIN)/%o)
 RM			= rm -rf
 

@@ -1,17 +1,5 @@
 #include "animal.hpp"
 
-/* class Animal {
-	public:
-		Animal();
-		Animal(const Animal &animal);
-		~Animal();
-		Animal& operator = (const Animal &animal);
-
-		void makeSound(void);
-	protected:
-		std::string type;
-}; */
-
 AAnimal::AAnimal() {
 	std::cout << "constructor called from Animal" << std::endl;
 	this->type = "Animal";
@@ -35,9 +23,9 @@ AAnimal::~AAnimal() {
 	std::cout << "Destructor called from Animal" << std::endl;
 };
 
-void	AAnimal::makeSound() const {
+/* void	AAnimal::makeSound() const {
 	std::cout << this->type << " makes some sound" << std::endl;
-};
+}; */
 
 std::string	AAnimal::getType() const {
 	return this->type;

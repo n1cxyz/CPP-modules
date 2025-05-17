@@ -1,13 +1,5 @@
 #include "dog.hpp"
 
-/*class Dog : public Dog {
-	public:
-		Dog();
-		Dog(const Dog &dog);
-		~Dog();
-		Dog& operator = (const Dog &dog);
-}; */
-
 Dog::Dog() {
 	std::cout << "constructor called from Dog" << std::endl;
 	this->type = "Dog";
