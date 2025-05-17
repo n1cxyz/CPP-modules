@@ -1,17 +1,5 @@
 #include "animal.hpp"
 
-/* class Animal {
-	public:
-		Animal();
-		Animal(const Animal &animal);
-		~Animal();
-		Animal& operator = (const Animal &animal);
-
-		void makeSound(void);
-	protected:
-		std::string type;
-}; */
-
 Animal::Animal() {
 	std::cout << "constructor called from Animal" << std::endl;
 	this->type = "Animal";
