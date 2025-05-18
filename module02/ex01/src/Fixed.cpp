@@ -1,25 +1,5 @@
 #include "Fixed.hpp"
 
-/* class Fixed {
-	public:
-		Fixed ();
-		Fixed (const int);
-		Fixed (const float);
-		Fixed (const Fixed& fixed);
-		Fixed& operator=(const Fixed& fixed);
-		~Fixed ();
-		int		getRawBits(void) const;
-		void	setRawBits(int const raw);
-		float	toFloat(void) const;
-		int		toInt(void) const;
-	private:
-		int					rawBits;
-		static const int	fractionalBits = 8;
-};
-
-std::ostream& operator<<(std::ostream &op, const Fixed &a);
-}; */
-
 Fixed::Fixed() {
 	std::cout << "Default constructor called" << "\n";
 	this->rawBits = 0;

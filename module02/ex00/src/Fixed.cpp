@@ -1,18 +1,5 @@
 #include "Fixed.hpp"
 
-/* class Fixed {
-	public:
-		Fixed ();
-		Fixed (const Fixed &fixed);
-		Fixed& operator=(const Fixed &fixed);
-		~Fixed ();
-		int		getRawBits(void) const;
-		void	setRawBits(int const raw);
-	private:
-		int					rawBits;
-		static const int	fractionalBits;
-}; */
-
 Fixed::Fixed() {
 	this->rawBits = 0;
 	std::cout << "Default constructor called" << "\n";
