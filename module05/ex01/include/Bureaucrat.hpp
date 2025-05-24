@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <stdexcept>
+class Form;
 
 class Bureaucrat
 {
@@ -13,16 +14,12 @@ private:
 public:
     class GradeTooHighException : public std::exception {
         public:
-            virtual const char* what() const throw() {
-                return "Grade too high!";
-            }
+            virtual const char* what() const throw();
     };
 
     class GradeTooLowException : public std::exception {
         public:
-            virtual const char* what() const throw() {
-                return "Grade too low!";
-            }
+            virtual const char* what() const throw();
     };
 
     Bureaucrat();
@@ -35,6 +32,8 @@ public:
     int                 getGrade() const;
     void                incrementGrade(void);
     void                decrementGrade(void);
+
+    void    signForm(Form& f);
 };
 
 std::ostream& operator<<(std::ostream &op, const Bureaucrat& b);
