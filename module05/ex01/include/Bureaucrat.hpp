@@ -1,5 +1,5 @@
-#ifndef BUREAUCRAT
-# define BUREAUCRAT
+#ifndef BUREAUCRAT_HPP
+# define BUREAUCRAT_HPP
 
 #include <iostream>
 #include <stdexcept>
@@ -13,12 +13,16 @@ private:
 public:
     class GradeTooHighException : public std::exception {
         public:
-            virtual const char* what() const throw();
+            virtual const char* what() const throw() {
+                return "Grade too high!";
+            }
     };
 
     class GradeTooLowException : public std::exception {
         public:
-            virtual const char* what() const throw();
+            virtual const char* what() const throw() {
+                return "Grade too low!";
+            }
     };
 
     Bureaucrat();
