@@ -1,0 +1,20 @@
+#include "RobotomyRequestForm.hpp"
+#include <fstream>
+
+RobotomyRequestForm::RobotomyRequestForm()
+    : AForm("RobotomyRequestForm", 72, 45), target("home") {}
+
+RobotomyRequestForm::RobotomyRequestForm(const std::string& target) 
+    : AForm("RobotomyRequestForm", 72, 45), target(target) {}
+
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other)
+    : AForm(other), target(other.target) {}
+
+RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& other) {
+    if (this != &other) {
+        AForm::operator=(other);
+    }
+    return *this;
+}
+
+RobotomyRequestForm::~RobotomyRequestForm() {}
