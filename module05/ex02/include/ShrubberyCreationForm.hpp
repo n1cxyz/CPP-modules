@@ -1,8 +1,7 @@
 #ifndef SHRUBBERYCREATIONFORM_HPP
 #define SHRUBBERYCREATIONFORM_HPP
 
-#include "Form.hpp"
-#include "Bureaucrat.hpp"
+#include "../include/Form.hpp"
 
 class ShrubberyCreationForm : public AForm 
 {
@@ -15,7 +14,7 @@ public:
     ShrubberyCreationForm& operator=(const ShrubberyCreationForm& other);
     ~ShrubberyCreationForm();
 
-    void execute(const Bureaucrat& executor) const;
+    void action() const;
 };
 
 #endif

@@ -1,4 +1,5 @@
 #include "RobotomyRequestForm.hpp"
+#include "../include/Form.hpp"
 #include <fstream>
 
 RobotomyRequestForm::RobotomyRequestForm()
@@ -18,3 +19,11 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& o
 }
 
 RobotomyRequestForm::~RobotomyRequestForm() {}
+
+void RobotomyRequestForm::action() const {
+    std::cout << "* BZZZZZZZ DRRRRRR *\n";
+    if (std::rand() % 2)
+        std::cout << target << " has been robotomized successfully!\n";
+    else
+        std::cout << "Robotomy failed on " << target << ".\n";
+}

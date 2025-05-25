@@ -1,4 +1,5 @@
-#include "ShrubberyCreationForm.hpp"
+#include "../include/ShrubberyCreationForm.hpp"
+#include "../include/Form.hpp"
 #include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm()
@@ -19,12 +20,7 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
-void ShrubberyCreationForm::execute(const Bureaucrat& executor) const {
-    if (!getIsSigned())
-        throw FormNotSignedException();
-    if (executor.getGrade() > getExecGrade())
-        throw GradeTooLowException();
-
+void ShrubberyCreationForm::action() const {
     std::ofstream file(target + "_shrubbery");
     if (!file) {
         std::cerr << "Could not open file for writing\n";

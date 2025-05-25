@@ -39,7 +39,9 @@ public:
     int                 getSignGrade() const;
     int                 getExecGrade() const;
 
-    virtual void beSigned(const Bureaucrat& b) = 0;
+    virtual void beSigned(const Bureaucrat& b);
+    virtual void execute(const Bureaucrat& executor) const;
+    virtual void action() const = 0;
 };
 
 std::ostream& operator<<(std::ostream &os, const AForm& f);

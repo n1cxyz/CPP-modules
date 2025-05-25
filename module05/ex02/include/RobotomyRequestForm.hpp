@@ -1,8 +1,7 @@
 #ifndef ROBOTOMYREQUESTFORM_HPP
-#define ROBOTOMYREQUESTONFORM_HPP
+#define ROBOTOMYREQUESTFORM_HPP
 
-#include "Form.hpp"
-#include "Bureaucrat.hpp"
+#include "../include/Form.hpp"
 
 class RobotomyRequestForm : public AForm 
 {
@@ -15,7 +14,7 @@ public:
     RobotomyRequestForm& operator=(const RobotomyRequestForm& other);
     ~RobotomyRequestForm();
 
-    void execute(const Bureaucrat& executor) const;
+    void action() const;
 };
 
 #endif
