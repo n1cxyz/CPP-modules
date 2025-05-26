@@ -32,7 +32,7 @@ public:
     AForm(const std::string name, const int signGrade, const int execGrade);
     AForm(const AForm& other);
     AForm& operator=(const AForm& other);
-    ~AForm();
+    virtual ~AForm();
 
     const std::string   getName() const;
     bool                getIsSigned() const;

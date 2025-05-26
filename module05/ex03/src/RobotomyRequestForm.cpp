@@ -1,6 +1,7 @@
 #include "RobotomyRequestForm.hpp"
 #include "../include/Form.hpp"
 #include <fstream>
+#include <cstdlib>
 
 RobotomyRequestForm::RobotomyRequestForm()
     : AForm("RobotomyRequestForm", 72, 45), target("home") {}
