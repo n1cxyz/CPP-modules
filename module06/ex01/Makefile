@@ -3,7 +3,7 @@ CXX			= c++
 BIN			= bin
 INCLUDES	= -I./include
 CXXFLAGS	= -Wall -Werror -Wextra -std=c++98
-SRC			= src/main.cpp src/Fixed.cpp
+SRC			= src/main.cpp src/Serializer.cpp
 OBJS		= $(SRC:src/%c=$(BIN)/%o)
 RM			= rm -rf
 
