@@ -6,12 +6,9 @@
 class scalarConverter {
 private:
 	scalarConverter();
-	scalarConverter(const scalarConverter& other);
-	scalarConverter& operator=(const scalarConverter& other);
 	~scalarConverter();
 public:	
 	static void convert(const std::string& input);
-
 };
 
 #endif
