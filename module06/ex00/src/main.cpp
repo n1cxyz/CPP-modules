@@ -2,7 +2,7 @@
 
 int	main(int ac, char** av) {
 	if (ac != 2) {
-		std::cout << "Wrong number of arguments." << std::endl;
+		std::cerr << "Usage: ./scalarConverter <literal_value>" << std::endl;
 		return 1;
 	}
 	scalarConverter::convert(av[1]);

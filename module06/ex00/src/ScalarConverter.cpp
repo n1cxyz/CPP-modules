@@ -1,69 +1,56 @@
 #include "ScalarConverter.hpp"
+#include <sstream>
+#include <iomanip>
+#include <cstdlib>
+#include <climits>
+#include <cfloat>
+#include <cmath>
+#include <cerrno>
 
 scalarConverter::scalarConverter() {}
 scalarConverter::~scalarConverter() {}
 
-static bool isValidInput(const std::string& input) {
-	size_t i = 0;
-	while (i < input.length() && std::isspace(input[i]))
-		i++;
-	if (i == input.length())
-		return false;
-
-	while (i < input.length() && !std::isspace(input[i]))
-		i++;
-	while (i < input.length() && std::isspace(input[i]))
-		i++;
-
-	return i == input.length();
+static bool isChar(const std::string& input) {
+	if (input.length() == 1 && std::isprint(input[0]) && !std::isdigit(input[0]))
+		return true;
+	return false;
 }
 
-static char convertToChar(const std::string& input, size_t& pos) {
-	pos++;
-	if (!std::isprint(input[pos])) {
-		std::cout << "Invalid Input.\nChar must be printable" << std::endl;
-		return 0;
-	}
-	if (input[pos + 1] != '\'') {
-		std::cout << "Invalid Input.\nChar must be single" << std::endl;
-		return 0;
-	}
-	return input[pos + 1];
+static bool isSpecial(const std::string& input) {
+	if (input == "nan" || input == "nanf" || input == "+inf" ||
+		input == "-inf" || input == "+inff" || input == "-inff")
+		return true;
+	return false;
 }
-
-static void print(char c) {
-	if (c == 0)
-		std::cout << "char: " << "Non displayable" << std::endl;
-	else
-		std::cout << "char: " << c << std::endl;
-}
-
-// bool isInt(const std::string& input) {
-	
-// }
-
-// bool isFloat(const std::string& input) {
-	
-// }
-
-// bool isDouble(const std::string& input) {
-	
-// }
 
 void scalarConverter::convert(const std::string& input) {
-	char c = 0;
-	if (!isValidInput(input)) {
-		std::cout << "Invalid Input." << std::endl;
-		return;
+	std::cout << "DEBUG input string: '" << input << "' length: " << input.size() << "\n";
+	if (isChar(input)) {
+		char c = input[0];
+		std::cout << "char: " << c << std::endl;
+		std::cout << "int: " << static_cast<int>(c) << "\n";
+        std::cout << std::fixed << std::setprecision(1);
+        std::cout << "float: " << static_cast<float>(c) << "f\n";
+        std::cout << "double: " << static_cast<double>(c) << "\n";
+        return;
+	} else if (isSpecial(input)) {
+		std::string base = input;
+		std::cout << "DEBUG base string: '" << base << "' length: " << base.size() << "\n";
+		bool hasF = false;
+		if (input[input.size() - 1] == 'f') {
+			base = input.substr(0, input.length() - 1);
+			hasF = true;
+		}
+
+		std::cout << "char: impossible\n";
+		std::cout << "int: impossible\n";
+
+		if (hasF)
+			std::cout << "float: " << input << "\n";
+		else
+			std::cout << "float: " << base << "f\n";
+
+		std::cout << "double: " << base << "\n";
+			return;
 	}
-	for (size_t i = 0; i < input.length(); ++i) {
-		while (i < input.length() && std::isspace(input[i]))
-			i++;
-		// char
-		std::cout << input[i] << std::endl;
-		if (input[i] == '\'') {
-			c = convertToChar(input, i);
-		}	
-	}
-	print(c);
 }

@@ -14,7 +14,7 @@ SRC = $(wildcard $(SRC_DIR)/*.cpp)
 OBJ = $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(SRC))
 
 # Target binary name
-NAME = convert
+NAME = scalarConverter
 	
 # Default target
 all: $(NAME)
