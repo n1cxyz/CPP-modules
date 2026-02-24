@@ -3,8 +3,22 @@
 #include "../include/PresidentialPardonForm.hpp"
 #include "../include/ShrubberyCreationForm.hpp"
 
+Intern::Intern() {}
+
+Intern::Intern(const Intern& other) { *this = other; }
+
 const char* Intern::UnknownFormException::what() const throw() {
 	return "unkown form requested";
+}
+
+Intern::~Intern() {}
+
+Intern& Intern::operator=(const Intern& other)
+{
+    if (this != &other)
+    {
+    }
+    return *this;
 }
 
 AForm*	createRobotomy(const std::string& target) {

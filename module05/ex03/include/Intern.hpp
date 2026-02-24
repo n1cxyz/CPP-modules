@@ -7,6 +7,11 @@ class Intern
 {
 private:
 public:
+	Intern();
+	Intern(const Intern& other);
+	~Intern();
+	Intern& operator=(const Intern& other);
+
 	AForm*	makeForm(const std::string form, const std::string target);
 
 	class UnknownFormException : public std::exception {
