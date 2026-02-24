@@ -1,22 +1,30 @@
-#ifndef SERIALIZER_HPP
-#define SERIALIZER_HPP
-
 #include <iostream>
 #include <stdint.h>
 
-class Serializer {
-private:
-	Serializer();
-	~Serializer();
-	Serializer(const Serializer& other);
-	Serializer& operator=(const Serializer& other);
-
-	typedef struct Data {
-
-	};
-public:
-	uintptr_t	serialize(Data* ptr);
-	Data* 		deserialize(uintptr_t raw);
+struct Data {
+    int id;
+    char letter;
+    double value;
 };
 
-#endif
+class Serializer {
+private:
+    Serializer();
+    Serializer(const Serializer&);
+    Serializer& operator=(const Serializer&);
+    ~Serializer();
+
+public:
+    static uintptr_t serialize(Data* ptr) {
+        return reinterpret_cast<uintptr_t>(ptr);
+    }
+
+    static Data* deserialize(uintptr_t raw) {
+        return reinterpret_cast<Data*>(raw);
+    }
+};
+
+Serializer::Serializer() {}
+Serializer::Serializer(const Serializer&) {}
+Serializer& Serializer::operator=(const Serializer&) { return *this; }
+Serializer::~Serializer() {}

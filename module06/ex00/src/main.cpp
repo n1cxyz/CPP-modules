@@ -1,11 +1,12 @@
 #include "ScalarConverter.hpp"
+#include <iostream>
 
-int	main(int ac, char** av) {
-	if (ac != 2) {
-		std::cerr << "Usage: ./scalarConverter <literal_value>" << std::endl;
-		return 1;
-	}
-	scalarConverter::convert(av[1]);
+int main(int argc, char** argv) {
+    if (argc != 2) {
+        std::cerr << "Usage: ./convert <literal>" << std::endl;
+        return 1;
+    }
 
-	return 0;
+    ScalarConverter::convert(argv[1]);
+    return 0;
 }
